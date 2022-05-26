@@ -18,6 +18,11 @@ public class ProdutoController {
     @Autowired
     private IprodutoService service;
 
+    @GetMapping("/")
+    public String sayhello(){
+        return "oi";
+    }
+
     @GetMapping("/produtos")
     public ResponseEntity<List<Produto>> listarProdutos(){
         return  ResponseEntity.ok(service.recuperarTodos());
